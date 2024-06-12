@@ -4,6 +4,7 @@
 
 This document provides an in-depth guide on setting up and managing webhooks for lead notifications. Webhooks are a powerful feature that allows you to receive real-time updates about interactions with your Page's Lead ads. By integrating webhooks, you can streamline your lead management process and ensure timely follow-ups.
 
+
 ## How to create webhook in AWS Environment
 
 1. We need to create a GET and POST webhook in AWS API Gateway. for eg. GET /facebookwebhook, POST /facebookwebhook
@@ -32,6 +33,7 @@ This document provides an in-depth guide on setting up and managing webhooks for
     REF: https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving
 9. Once you receive details of leads, you may save data in your database.
 
+
 ## Create an facebook developer account
 
 https://developers.facebook.com
@@ -49,6 +51,7 @@ Summary: Buiness app creates or manage business assets like Pages, Events, Group
     c> Choose Ad account from dropdown >> click on subscribe to this object
     c> Enter Callback URL (It should be a GET endpoint)
     d> Enter Verify token = VERIFY_TOKEN
+
 
 ## Subscribe to leadgen: Page Subscribed Apps
 
@@ -87,6 +90,17 @@ https://developers.facebook.com/tools/lead-ads-testing/
 1. Select your page
 2. Select your form
 3. click on preview form to fill the leads form & submit to generate lead & trigger your POST webhook endpoint
+
+
+## Webhook Response: Retrieving Leads
+Ref: https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving/
+
+
+## Verify Payloads
+Facebook will send leads related data in POST webhook endpoint which we did in step ## How to create webhook in AWS Environment
+We can verify the signature in header to determine if request if valid, in case of invalid request, we can reject the request and we should not process that request.
+Ref: https://developers.facebook.com/docs/messenger-platform/webhooks#validate-payloads
+
 
 ## Author
 E-mail: dev.mithilesh2mik@gmail.com
